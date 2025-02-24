@@ -22,5 +22,7 @@ urlpatterns = [
     path('api/v1/',include('books.urls')),
 
     path('swagger/',scheme_view.with_ui('swagger',cache_timeout=0),name='scheme-swagger-ui'),
-    path('redoc/',scheme_view.with_ui('redoc',cache_timeout=0),name='scheme-redoc-ui')
+    path('redoc/',scheme_view.with_ui('redoc',cache_timeout=0),name='scheme-redoc-ui'),
+    path('api-auth/',include('rest_framework.urls')),
+    path('api/v1/dj-rest-auth/',include('dj_rest_auth.urls'))
 ]
